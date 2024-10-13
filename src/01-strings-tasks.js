@@ -129,6 +129,7 @@ function repeatString(value, count) {
 function removeFirstOccurrences(str, value) {
 	const index = str.indexOf(value);
 	if (index === -1) {
+
 		return str;
 	}
 	return str.slice(0, index) + str.slice(index + value.length);
@@ -160,8 +161,8 @@ function unbracketTag(str) {
  *   'Thunderstruck' => 'THUNDERSTRUCK'
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
-function convertToUpperCase(/* str */) {
-	throw new Error('Not implemented');
+function convertToUpperCase(str) {
+	return str.toUpperCase();
 }
 
 /**
@@ -179,8 +180,8 @@ function convertToUpperCase(/* str */) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-function extractEmails(/* str */) {
-	throw new Error('Not implemented');
+function extractEmails(str) {
+	return str.split(';');
 }
 
 /**
@@ -206,8 +207,11 @@ function extractEmails(/* str */) {
  *             '└──────────┘\n'
  *
  */
-function getRectangleString(/* width, height */) {
-	throw new Error('Not implemented');
+function getRectangleString(width, height) {
+	const top = `\u250C${'\u2500'.repeat(width - 2)}\u2510\n`;
+	const middle = `\u2502${' '.repeat(width - 2)}\u2502\n`.repeat(height - 2);
+	const downe = `\u2514${'\u2500'.repeat(width - 2)}\u2518\n`;
+	return top + middle + downe;
 }
 
 
@@ -227,8 +231,19 @@ function getRectangleString(/* width, height */) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(/* str */) {
-	throw new Error('Not implemented');
+function encodeToRot13(str) {
+	return str.replace(/[A-Za-z]/g, function (char) {
+		const code = char.charCodeAt(0);
+
+		if (code >= 65 && code <= 90) {
+			return String.fromCharCode(((code - 65 + 13) % 26) + 65);
+		}
+
+		if (code >= 97 && code <= 122) {
+			return String.fromCharCode(((code - 97 + 13) % 26) + 97);
+		}
+		return char;  // если это не буква, оставляем символ как есть
+	});
 }
 
 /**
@@ -244,8 +259,14 @@ function encodeToRot13(/* str */) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-	throw new Error('Not implemented');
+function isString(value) {
+	if (typeof value === 'string') {
+		return true;
+	}
+	if (value instanceof String) {
+		return true;
+	}
+	return false;
 }
 
 
@@ -273,8 +294,15 @@ function isString(/* value */) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-function getCardId(/* value */) {
-	throw new Error('Not implemented');
+function getCardId(value) {
+	const deck = [
+		'A♣', '2♣', '3♣', '4♣', '5♣', '6♣', '7♣', '8♣', '9♣', '10♣', 'J♣', 'Q♣', 'K♣',
+		'A♦', '2♦', '3♦', '4♦', '5♦', '6♦', '7♦', '8♦', '9♦', '10♦', 'J♦', 'Q♦', 'K♦',
+		'A♥', '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥',
+		'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠'
+	];
+
+	return deck.indexOf(value);
 }
 
 

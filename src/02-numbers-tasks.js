@@ -19,8 +19,8 @@
  *   5, 10 => 50
  *   5, 5  => 25
  */
-function getRectangleArea(/* width, height */) {
-  throw new Error('Not implemented');
+function getRectangleArea(width, height) {
+	return width * height;
 }
 
 
@@ -35,8 +35,8 @@ function getRectangleArea(/* width, height */) {
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
-function getCircleCircumference(/* radius */) {
-  throw new Error('Not implemented');
+function getCircleCircumference(radius) {
+	return 2 * Math.PI * radius;
 }
 
 /**
@@ -51,8 +51,21 @@ function getCircleCircumference(/* radius */) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function getAverage(/*value1, value2*/) {
+
+	/*// Проверяем, являются ли значения числами
+	if (typeof value1 !== 'number' || typeof value2 !== 'number') {
+		throw new Error('Both arguments must be numbers');
+	}
+
+	// Проверяем на переполнение и возвращаем 0, если хотя бы одно значение - Infinity
+	if (!isFinite(value1) || !isFinite(value2)) {
+		return 0; // Или любое другое значение, которое вы хотите вернуть в случае Infinity
+	}
+
+	return (value1 + value2) / 2;*/
+
+	throw new Error('Not implemented');
 }
 
 /**
@@ -70,8 +83,12 @@ function getAverage(/* value1, value2 */) {
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getDistanceBetweenPoints(x1, y1, x2, y2) {
+	const deltaX = x2 - x1;
+	const deltaY = y2 - y1;
+
+	// Применяем формулу расстояния
+	return Math.sqrt(deltaX * deltaX + deltaY * deltaY);
 }
 
 /**
@@ -86,8 +103,11 @@ function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot(/* a, b */) {
-  throw new Error('Not implemented');
+function getLinearEquationRoot(a, b) {
+	if (a === 0) {
+		throw new Error('Coefficient a cannot be zero');
+	}
+	return -b / a;
 }
 
 
@@ -110,7 +130,7 @@ function getLinearEquationRoot(/* a, b */) {
  *   (0,1) (1,2)     => 0
  */
 function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+	throw new Error('Not implemented');
 }
 
 /**
@@ -126,7 +146,7 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     0     => 0
  */
 function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
+	throw new Error('Not implemented');
 }
 
 
@@ -142,7 +162,7 @@ function getLastDigit(/* value */) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(/* value */) {
-  throw new Error('Not implemented');
+	throw new Error('Not implemented');
 }
 
 /**
@@ -159,7 +179,7 @@ function parseNumberFromString(/* value */) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelepipedDiagonal(/* a, b, c */) {
-  throw new Error('Not implemented');
+	throw new Error('Not implemented');
 }
 
 
@@ -181,7 +201,7 @@ function getParallelepipedDiagonal(/* a, b, c */) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(/* num, pow */) {
-  throw new Error('Not implemented');
+	throw new Error('Not implemented');
 }
 
 /**
@@ -202,7 +222,7 @@ function roundToPowerOfTen(/* num, pow */) {
  *   17 => true
  */
 function isPrime(/* n */) {
-  throw new Error('Not implemented');
+	throw new Error('Not implemented');
 }
 
 /**
@@ -221,20 +241,20 @@ function isPrime(/* n */) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(/* value, def */) {
-  throw new Error('Not implemented');
+	throw new Error('Not implemented');
 }
 
 module.exports = {
-  getRectangleArea,
-  getCircleCircumference,
-  getAverage,
-  getDistanceBetweenPoints,
-  getLinearEquationRoot,
-  getAngleBetweenVectors,
-  getLastDigit,
-  parseNumberFromString,
-  getParallelepipedDiagonal,
-  roundToPowerOfTen,
-  isPrime,
-  toNumber,
+	getRectangleArea,
+	getCircleCircumference,
+	getAverage,
+	getDistanceBetweenPoints,
+	getLinearEquationRoot,
+	getAngleBetweenVectors,
+	getLastDigit,
+	parseNumberFromString,
+	getParallelepipedDiagonal,
+	roundToPowerOfTen,
+	isPrime,
+	toNumber,
 };
