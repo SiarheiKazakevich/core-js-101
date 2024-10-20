@@ -1,14 +1,15 @@
 module.exports = {
 	env: {
+		es2021: true,  // Убедитесь, что это указано
+		node: true,
 		browser: true,
-		es6: true, // можно указать и es6, если es2021 не работает
 	},
 	parserOptions: {
-		ecmaVersion: 12, // 12 соответствует ECMAScript 2021
-		sourceType: 'module',
+		ecmaVersion: 12,  // Убедитесь, что ecmaVersion поддерживает ES2021 (или более поздние версии)
+		sourceType: 'module',  // Обязательно укажите, что используется модульная система ECMAScript
 	},
 	rules: {
-		// ваши правила
+		// Ваши правила ESLint
 	},
 };
 /*module.exports = {
