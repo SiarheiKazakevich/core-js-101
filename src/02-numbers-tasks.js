@@ -7,7 +7,6 @@
  *                                                                                           *
  ******************************************************************************************* */
 
-
 /**
  * Returns an area of a rectangle given by width and height.
  *
@@ -20,9 +19,8 @@
  *   5, 5  => 25
  */
 function getRectangleArea(width, height) {
-	return width * height;
+  return width * height;
 }
-
 
 /**
  * Returns a circumference of circle given by radius.
@@ -36,7 +34,7 @@ function getRectangleArea(width, height) {
  *   0    => 0
  */
 function getCircleCircumference(radius) {
-	return 2 * Math.PI * radius;
+  return 2 * Math.PI * radius;
 }
 
 /**
@@ -52,8 +50,7 @@ function getCircleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(/*value1, value2*/) {
-
-	/*// Проверяем, являются ли значения числами
+  /*// Проверяем, являются ли значения числами
 	if (typeof value1 !== 'number' || typeof value2 !== 'number') {
 		throw new Error('Both arguments must be numbers');
 	}
@@ -65,7 +62,7 @@ function getAverage(/*value1, value2*/) {
 
 	return (value1 + value2) / 2;*/
 
-	throw new Error('Not implemented');
+  throw new Error('Not implemented');
 }
 
 /**
@@ -84,11 +81,11 @@ function getAverage(/*value1, value2*/) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-	const deltaX = x2 - x1;
-	const deltaY = y2 - y1;
+  const deltaX = x2 - x1;
+  const deltaY = y2 - y1;
 
-	// Применяем формулу расстояния
-	return Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+  // Применяем формулу расстояния
+  return Math.sqrt(deltaX * deltaX + deltaY * deltaY);
 }
 
 /**
@@ -104,12 +101,11 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
-	if (a === 0) {
-		throw new Error('Coefficient a cannot be zero');
-	}
-	return -b / a;
+  if (a === 0) {
+    throw new Error('Coefficient a cannot be zero');
+  }
+  return -b / a;
 }
-
 
 /**
  * Returns an angle (in radians) between two vectors given by xi and yi,
@@ -130,10 +126,10 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (1,2)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
-	const dotProduct = x1 * x2 + y1 * y2;
-	const magnitudeA = Math.sqrt(x1 * x1 + y1 * y1);
-	const magnitudeB = Math.sqrt(x2 * x2 + y2 * y2);
-	return Math.acos(dotProduct / (magnitudeA * magnitudeB));
+  const dotProduct = x1 * x2 + y1 * y2;
+  const magnitudeA = Math.sqrt(x1 * x1 + y1 * y1);
+  const magnitudeB = Math.sqrt(x2 * x2 + y2 * y2);
+  return Math.acos(dotProduct / (magnitudeA * magnitudeB));
 }
 
 /**
@@ -149,9 +145,8 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-	return value % 10;
+  return value % 10;
 }
-
 
 /**
  * Returns a number by given string representation.
@@ -165,7 +160,7 @@ function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(value) {
-	return Number(value);
+  return Number(value);
 }
 
 /**
@@ -182,9 +177,8 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelepipedDiagonal(a, b, c) {
-	return Math.sqrt(a * a + b * b + c * c);
+  return Math.sqrt(a * a + b * b + c * c);
 }
-
 
 /**
  * Returns the number rounded to specified power of 10.
@@ -204,7 +198,7 @@ function getParallelepipedDiagonal(a, b, c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-	return Math.round(num / Math.pow(10, pow)) * Math.pow(10, pow);
+  return Math.round(num / Math.pow(10, pow)) * Math.pow(10, pow);
 }
 
 /**
@@ -225,15 +219,15 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
-	if (n <= 1) {
-		return false;
-	}
-	for (let i = 2; i <= Math.sqrt(n); i++) {
-		if (n % i === 0) {
-			return false;
-		}
-	}
-	return true;
+  if (n <= 1) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
 }
 
 /**
@@ -252,21 +246,21 @@ function isPrime(n) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(value, def) {
-	const result = Number(value);
-	return isNaN(result) ? def : result;
+  const result = Number(value);
+  return isNaN(result) ? def : result;
 }
 
 module.exports = {
-	getRectangleArea,
-	getCircleCircumference,
-	getAverage,
-	getDistanceBetweenPoints,
-	getLinearEquationRoot,
-	getAngleBetweenVectors,
-	getLastDigit,
-	parseNumberFromString,
-	getParallelepipedDiagonal,
-	roundToPowerOfTen,
-	isPrime,
-	toNumber,
+  getRectangleArea,
+  getCircleCircumference,
+  getAverage,
+  getDistanceBetweenPoints,
+  getLinearEquationRoot,
+  getAngleBetweenVectors,
+  getLastDigit,
+  parseNumberFromString,
+  getParallelepipedDiagonal,
+  roundToPowerOfTen,
+  isPrime,
+  toNumber,
 };

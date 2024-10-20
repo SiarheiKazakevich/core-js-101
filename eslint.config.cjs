@@ -1,15 +1,15 @@
-const { defineConfig } = require('eslint-define-config');
+const { defineConfig } = require("eslint-define-config");
 
 module.exports = defineConfig({
-	languageOptions: {
-		parserOptions: {
-			ecmaVersion: 12, // или 2020
-			sourceType: 'module',
-		},
-	},
-	rules: {
-		// ваши правила
-	},
+  languageOptions: {
+    parserOptions: {
+      ecmaVersion: 12, // или 2020
+      sourceType: "module",
+    },
+  },
+  rules: {
+    // ваши правила
+  },
 });
 /*module.exports = {
 	env: {

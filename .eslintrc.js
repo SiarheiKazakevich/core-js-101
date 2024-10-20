@@ -1,19 +1,26 @@
 module.exports = {
 	env: {
-		es2021: true,  // Убедитесь, что это указано
+		es2021: true, // Убедитесь, что это указано
 		node: true,
 		browser: true,
 	},
 	parserOptions: {
-		ecmaVersion: 12,  // Убедитесь, что ecmaVersion поддерживает ES2021 (или более поздние версии)
-		sourceType: 'module',  // Обязательно укажите, что используется модульная система ECMAScript
+		ecmaVersion: 12, // Убедитесь, что ecmaVersion поддерживает ES2021 (или более поздние версии)
+		sourceType: 'module', // Обязательно укажите, что используется модульная система ECMAScript
 	},
 	rules: {
 		// Ваши правила ESLint
-		"no-console": "warn",
-		"no-unused-vars": "warn",
-		"no-undef": "error"
+		'no-console': 'warn',
+		'no-unused-vars': 'warn',
+		'no-undef': 'error',
 	},
+	ignores: [
+		'node_modules/',   // Игнорируем папку node_modules
+		'dist/',           // Игнорируем папку dist
+		'*.log',           // Игнорируем файлы логов
+		'.vscode/',        // Игнорируем конфиги редактора
+		'.idea/'           // Игнорируем конфиги редактора
+	]
 };
 /*module.exports = {
   "env": {
