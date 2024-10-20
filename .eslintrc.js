@@ -10,6 +10,9 @@ module.exports = {
 	},
 	rules: {
 		// Ваши правила ESLint
+		"no-console": "warn",
+		"no-unused-vars": "warn",
+		"no-undef": "error"
 	},
 };
 /*module.exports = {
